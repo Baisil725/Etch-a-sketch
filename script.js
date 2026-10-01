@@ -1,16 +1,15 @@
-let limit = 16;
+const container = document.querySelector(".container");
+const clearCanvas = document.querySelector("#clear-canvas");
+const canvasSize = document.querySelector("#canvas-size");
 
 
-const createGrid = function(){
-    container.innerHTML = '';
-    let input = prompt("Enter the size of the canvas");
-    limit = parseInt(input);
-    if(limit<=100){
-        for(let i = 0; i< limit; i++){
+const createGrid = function(size){
+    container.innerHTML = ''
+        for(let i = 0; i< size; i++){
             const row = document.createElement("div");
             row.style.display = "flex";
             row.style.flex = "1";
-            for(let j =0; j< limit; j++){
+            for(let j =0; j< size; j++){
                 const square = document.createElement("div");
                 square.style.flex = "1";
                 square.style.border = "1px solid #ddd"; 
@@ -19,13 +18,22 @@ const createGrid = function(){
             }
             container.appendChild(row);
         }
-    }
 }
 
-const container = document.querySelector(".container");
-const clearCanvas = document.querySelector("#clear-canvas");
-const canvasSize = document.querySelector("#canvas-size");
 
-canvasSize.onclick = createGrid;
+
+canvasSize.onclick = () => {
+
+    const input = prompt("Please enter the size of your canvas (0 - 100)");
+    if(input === null) return;
+    const size = parseInt(input);
+    if (Number.isNaN(size) || size < 1 || size > 100) {
+        alert("Please enter a number between 1 and 100.");
+        return;
+    }
+    createGrid(size);
+};
+
+
 clearCanvas.onclick = () => {container.innerHTML = '';}
-
+createGrid(16);
