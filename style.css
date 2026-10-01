@@ -5,7 +5,8 @@ body{
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
     background-color: #E5E5F7;
-    background: repeating-linear-gradient(45deg, #E5E5F7 0px, #E5E5F7 10px, #444CF7 10px, #444CF7 11px, #E5E5F7 11px, #E5E5F7 20px, #22D1EE 20px, #22D1EE 21px);
+    background-image:  repeating-linear-gradient(0deg, transparent, transparent 19px, #444CF7 19px, #444CF7 20px, transparent 20px, transparent 39px, #444CF7 39px, #444CF7 40px), repeating-linear-gradient(90deg, transparent, transparent 19px, #444CF7 19px, #444CF7 20px, transparent 20px, transparent 39px, #444CF7 39px, #444CF7 40px), radial-gradient(circle at 20px 20px, #444CF7 1.6px, transparent 2.1px), radial-gradient(circle at 0px 0px, #444CF7 1.2px, transparent 1.7px), radial-gradient(circle at 40px 0px, #444CF7 1.2px, transparent 1.7px), radial-gradient(circle at 0px 40px, #444CF7 1.2px, transparent 1.7px), radial-gradient(circle at 40px 40px, #444CF7 1.2px, transparent 1.7px);
+    background-size: 40px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
