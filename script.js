@@ -2,8 +2,10 @@ const container = document.querySelector(".container");
 const clearCanvas = document.querySelector("#clear-canvas");
 const canvasSize = document.querySelector("#canvas-size");
 
+let currentSize = 16;
 
 const createGrid = function(size){
+    currentSize = size;
     container.innerHTML = ''
         for(let i = 0; i< size; i++){
             const row = document.createElement("div");
@@ -11,8 +13,15 @@ const createGrid = function(size){
             row.style.flex = "1";
             for(let j =0; j< size; j++){
                 const square = document.createElement("div");
+                square.classList.add("box");
                 square.style.flex = "1";
-                square.style.border = "1px solid #ddd"; 
+                square.style.border = "none"; 
+                square.addEventListener("mouseover", () => {
+                    const r = Math.floor(Math.random()*256);
+                    const g = Math.floor(Math.random()*256);
+                    const b = Math.floor(Math.random()*256);
+                    square.style.backgroundColor = `rgb(${r},${g},${b})`;
+                });
             
                 row.appendChild(square);
             }
@@ -35,5 +44,5 @@ canvasSize.onclick = () => {
 };
 
 
-clearCanvas.onclick = () => {container.innerHTML = '';}
+clearCanvas.onclick = () => {createGrid(currentSize);}
 createGrid(16);
