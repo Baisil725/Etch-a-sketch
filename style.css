@@ -4,7 +4,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(rgb(0, 0, 119), rgb(0,0,0));
+    background-color: #E5E5F7;
+    background: repeating-linear-gradient(45deg, #E5E5F7 0px, #E5E5F7 10px, #444CF7 10px, #444CF7 11px, #E5E5F7 11px, #E5E5F7 20px, #22D1EE 20px, #22D1EE 21px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,11 +16,17 @@ body{
 h1{
     margin: 0;
     padding: 20px;
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     font-size: 60px;
     font-family: "Rubik Doodle Shadow", system-ui;
     font-weight: 400;
     font-style: normal;
+    transition: 0.5s;
+}
+
+h1:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
 }
 
 .buttons{
@@ -35,10 +42,13 @@ button{
     width: 130px;
     border-radius: 6px;
     font-size: 15px;
-    color: white;
+    color: rgb(178, 246, 233);
+    font-family: "Joti One", serif;
+    font-weight: 400;
+    font-style: normal;
     border: none;
     font-size: clamp(0.3rem, 1vw, 1.7rem);
-    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.3),rgba(0,0,0,0.7));
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(9, 39, 2, 0.3),rgba(0,0,0,0.7));
     background-size: 200%;
     backdrop-filter: blur(7px) contrast(1.5);
     transition: 0.3s;
